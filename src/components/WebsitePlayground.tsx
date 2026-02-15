@@ -42,7 +42,7 @@ const CONTROL_PANEL_TOKENS = {
     pillFontSize: 11,
     pillRadius: 9999,
     borderWidth: 1,
-    borderOpacity: 0.1,
+    borderOpacity: 0.16,
     sectionGapY: 14,
     sectionPaddingY: 2,
     titleRowHeight: 16,
@@ -55,7 +55,7 @@ const CONTROL_PANEL_TOKENS = {
     pillTracking: '0.08em',
 } as const;
 
-const PANEL_BORDER_COLOR = `rgba(10,10,10,${CONTROL_PANEL_TOKENS.borderOpacity})`;
+const PANEL_BORDER_COLOR = `rgba(255,255,255,${CONTROL_PANEL_TOKENS.borderOpacity})`;
 
 type IconKind = 'diamond' | 'dot' | 'bolt' | 'square';
 
@@ -112,7 +112,7 @@ function PillSelector<T extends string>({
                 gap: CONTROL_PANEL_TOKENS.rowGap,
                 borderRadius: CONTROL_PANEL_TOKENS.pillRadius,
                 border: `${CONTROL_PANEL_TOKENS.borderWidth}px solid ${PANEL_BORDER_COLOR}`,
-                backgroundColor: 'rgba(10,10,10,0.03)',
+                backgroundColor: 'rgba(255,255,255,0.04)',
             }}
         >
             {options.map((opt) => {
@@ -130,7 +130,7 @@ function PillSelector<T extends string>({
                             borderWidth: CONTROL_PANEL_TOKENS.borderWidth,
                             borderStyle: 'solid',
                             borderColor: PANEL_BORDER_COLOR,
-                            color: selected ? '#0A0A0A' : '#8F8F8F',
+                            color: selected ? '#F3F6FF' : '#8C95AF',
                             fontSize: CONTROL_PANEL_TOKENS.pillFontSize,
                             letterSpacing: CONTROL_PANEL_TOKENS.pillTracking,
                             lineHeight: 1,
@@ -142,8 +142,8 @@ function PillSelector<T extends string>({
                                 className="absolute inset-0"
                                 style={{
                                     borderRadius: CONTROL_PANEL_TOKENS.pillRadius,
-                                    backgroundColor: '#FFFFFF',
-                                    boxShadow: `inset 0 0 0 ${CONTROL_PANEL_TOKENS.borderWidth}px ${PANEL_BORDER_COLOR}, 0 6px 14px rgba(0,0,0,0.08)`,
+                                    backgroundColor: 'rgba(43,50,76,0.92)',
+                                    boxShadow: `inset 0 0 0 ${CONTROL_PANEL_TOKENS.borderWidth}px rgba(255,255,255,0.14), 0 8px 20px rgba(2,6,23,0.46)`,
                                 }}
                                 transition={{ type: 'spring', stiffness: 420, damping: 34 }}
                             />
@@ -181,7 +181,7 @@ function ControlSection<T extends string>({
                     marginBottom: 8,
                 }}
             >
-                <span className="inline-flex items-center justify-center shrink-0 text-black/45" style={{ width: CONTROL_PANEL_TOKENS.iconSize, height: CONTROL_PANEL_TOKENS.iconSize }}>
+                <span className="inline-flex items-center justify-center shrink-0 text-white/45" style={{ width: CONTROL_PANEL_TOKENS.iconSize, height: CONTROL_PANEL_TOKENS.iconSize }}>
                     <SectionIcon kind={icon} />
                 </span>
                 <p
@@ -202,7 +202,7 @@ function ControlSection<T extends string>({
 
 export default function WebsitePlayground() {
     const [style, setStyle] = useState<StyleKey>('minimal');
-    const [mood, setMood] = useState<MoodKey>('light');
+    const [mood, setMood] = useState<MoodKey>('dark');
     const [anim, setAnim] = useState<AnimKey>('calm');
     const [layout, setLayout] = useState<LayoutKey>('agency');
 
@@ -270,7 +270,7 @@ export default function WebsitePlayground() {
                 >
                     <div className="w-full min-w-0 max-w-xl lg:max-w-none mx-auto">
                         <div
-                            className="min-w-0 rounded-2xl border border-black/[0.06] bg-white p-5 md:p-6 shadow-[0_8px_40px_rgba(0,0,0,0.05)]"
+                            className="min-w-0 rounded-2xl border border-white/[0.12] bg-[rgba(10,14,28,0.78)] p-5 md:p-6 shadow-[0_12px_38px_rgba(2,6,23,0.44)]"
                             style={{ display: 'flex', flexDirection: 'column', rowGap: CONTROL_PANEL_TOKENS.sectionGapY }}
                         >
                             <ControlSection
@@ -318,7 +318,7 @@ export default function WebsitePlayground() {
                             <AnimatePresence mode="wait">
                                 <motion.p
                                     key={feedback}
-                                    className="text-[0.8rem] text-[#666] italic font-light leading-relaxed pt-4 border-t border-black/[0.04]"
+                                    className="text-[0.8rem] text-[#A8B2CC] italic font-light leading-relaxed pt-4 border-t border-white/[0.1]"
                                     initial={{ opacity: 0, y: 8 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -8 }}
@@ -332,14 +332,14 @@ export default function WebsitePlayground() {
 
                     <div className="relative w-full max-w-3xl lg:max-w-none mx-auto">
                         <div
-                            className="rounded-2xl overflow-hidden border border-black/[0.06]"
-                            style={{ boxShadow: '0 8px 40px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.03)' }}
+                            className="rounded-2xl overflow-hidden border border-white/[0.12]"
+                            style={{ boxShadow: '0 16px 52px rgba(2,6,23,0.42), 0 2px 10px rgba(2,6,23,0.28)' }}
                         >
-                            <div className="flex items-center gap-2 px-4 py-3 border-b border-black/[0.04] bg-[#F8F8F8]">
-                                <div className="w-2 h-2 rounded-full bg-black/[0.06]" />
-                                <div className="w-2 h-2 rounded-full bg-black/[0.06]" />
-                                <div className="w-2 h-2 rounded-full bg-black/[0.06]" />
-                                <div className="ml-3 h-3.5 w-36 rounded-full bg-black/[0.04]" />
+                            <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.1] bg-[#10182C]">
+                                <div className="w-2 h-2 rounded-full bg-white/[0.18]" />
+                                <div className="w-2 h-2 rounded-full bg-white/[0.18]" />
+                                <div className="w-2 h-2 rounded-full bg-white/[0.18]" />
+                                <div className="ml-3 h-3.5 w-36 rounded-full bg-white/[0.08]" />
                             </div>
 
                             <motion.div className="p-5 md:p-7 min-h-[340px]" animate={{ backgroundColor: config.bg }} transition={{ duration: 0.5 }}>

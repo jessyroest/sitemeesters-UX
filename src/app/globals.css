@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: light;
-  --background: #FAFAFA;
-  --foreground: #0A0A0A;
-  --surface: #FFFFFF;
-  --surface-muted: #F5F7FB;
+  color-scheme: dark;
+  --background: #04070f;
+  --foreground: #edf2ff;
+  --surface: #0d1222;
+  --surface-muted: #151b2f;
   --accent: #4F46E5;
-  --accent-light: #EEF2FF;
-  --text-secondary: #555555;
-  --text-muted: #999999;
-  --text-tertiary: #6B7280;
-  --border: rgba(0, 0, 0, 0.06);
+  --accent-light: #262d57;
+  --text-secondary: #c0c8dc;
+  --text-muted: #8d98b4;
+  --text-tertiary: #a5afc6;
+  --border: rgba(255, 255, 255, 0.12);
   --section-space: clamp(5rem, 8vw, 9rem);
   --container: 72rem;
 }
@@ -30,8 +30,8 @@ html {
 
 body {
   background:
-    radial-gradient(70rem 34rem at 8% -8%, rgba(79, 70, 229, 0.11) 0%, transparent 62%),
-    radial-gradient(64rem 28rem at 92% 14%, rgba(37, 99, 235, 0.08) 0%, transparent 64%),
+    radial-gradient(70rem 34rem at 8% -8%, rgba(79, 70, 229, 0.2) 0%, transparent 62%),
+    radial-gradient(64rem 28rem at 92% 14%, rgba(37, 99, 235, 0.15) 0%, transparent 64%),
     var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
@@ -86,12 +86,12 @@ main > section {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.24);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.34);
 }
 
 /* Focus-visible for accessibility */
