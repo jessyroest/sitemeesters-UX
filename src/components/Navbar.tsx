@@ -20,9 +20,9 @@ export default function Navbar() {
             <motion.div
                 className="mx-auto max-w-6xl rounded-2xl"
                 style={{
-                    backgroundColor: useTransform(shellOpacity, (v) => `rgba(8,12,24,${v * 0.88})`),
-                    border: useTransform(shellBorder, (v) => `1px solid rgba(255,255,255,${v * 0.9})`),
-                    boxShadow: useTransform(shellShadow, (v) => `0 12px 36px rgba(2,6,23,${v + 0.2})`),
+                    backgroundColor: useTransform(shellOpacity, (v) => `rgba(255,255,255,${v * 0.82})`),
+                    border: useTransform(shellBorder, (v) => `1px solid rgba(0,0,0,${v})`),
+                    boxShadow: useTransform(shellShadow, (v) => `0 10px 30px rgba(15,23,42,${v})`),
                     backdropFilter: useTransform(shellOpacity, (v) => `blur(${v * 14}px)`),
                 }}
             >
@@ -45,7 +45,7 @@ export default function Navbar() {
                                     style={{ color: 'var(--text-secondary)' }}
                                 >
                                     {link.label}
-                                    <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#22D3EE] transition-all duration-300 group-hover:w-full" />
+                                    <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#0A0A0A] transition-all duration-300 group-hover:w-full" />
                                 </a>
                             </li>
                         ))}
@@ -54,14 +54,14 @@ export default function Navbar() {
                     <div className="justify-self-end flex items-center gap-2">
                         <a
                             href="#contact"
-                            className="md:hidden inline-flex items-center px-3.5 py-2 rounded-full text-[0.68rem] font-semibold tracking-[0.08em] uppercase border border-white/[0.2]"
+                            className="md:hidden inline-flex items-center px-3.5 py-2 rounded-full text-[0.68rem] font-semibold tracking-[0.08em] uppercase border border-black/[0.08]"
                             style={{ color: 'var(--foreground)' }}
                         >
                             Contact
                         </a>
                         <a
                             href="#contact"
-                            className="hidden md:inline-flex items-center px-5 py-2.5 rounded-full text-[0.72rem] font-semibold tracking-[0.1em] uppercase text-white bg-[#131B33] hover:bg-[#1B2544] transition-colors duration-300"
+                            className="hidden md:inline-flex items-center px-5 py-2.5 rounded-full text-[0.72rem] font-semibold tracking-[0.1em] uppercase text-white bg-[#0A0A0A] hover:bg-[#1F2937] transition-colors duration-300"
                         >
                             Let&apos;s Talk
                         </a>
