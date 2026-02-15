@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AXIOM — Premium Digital Studio
 
-## Getting Started
+An Awwwards-level, animation-first portfolio website built with Next.js 16, TypeScript, Tailwind CSS v4, Framer Motion, Lenis, and GSAP-ready architecture.
 
-First, run the development server:
+## Quick Start
 
 ```bash
+cd premium-agency
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# → http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── app/
+│   ├── globals.css        # Dark theme, design tokens, CSS scroll-driven animations
+│   ├── layout.tsx         # Root layout with Syne + Inter fonts (next/font)
+│   └── page.tsx           # Main page assembling all sections
+├── components/
+│   ├── Hero.tsx            # Fullscreen hero: canvas particles, parallax, stagger reveals
+│   ├── Proof.tsx           # Stats cards with blur-to-sharp stagger + hover glow
+│   ├── FeaturedWork.tsx    # Horizontal project rail + draggable before/after slider
+│   ├── Process.tsx         # Scroll-linked timeline with animated step activation
+│   ├── Testimonials.tsx    # Infinite marquee with fade edges + reduced-motion
+│   ├── FinalCTA.tsx        # Cinematic closing: gradient shift, headline scale, line reveal
+│   ├── Navbar.tsx          # Scroll-reactive transparency, underline hover
+│   ├── ScrollProgress.tsx  # Gradient progress bar (top of viewport)
+│   ├── CustomCursor.tsx    # Light-spot cursor, desktop-only, rAF-synced
+│   ├── LenisProvider.tsx   # Butter-smooth scroll via Lenis + rAF sync
+│   └── ScrollDrivenDivider.tsx  # Pure CSS scroll-driven animation (progressive enh.)
+├── hooks/
+│   └── useReducedMotion.ts # Detects prefers-reduced-motion
+└── lib/
+    └── constants.ts        # Design tokens, colors, easings, content data
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Animation Map
 
-## Learn More
+| Technique | Where | Library |
+|-----------|-------|---------|
+| Scroll progress bar | Top of page | Framer Motion `useScroll` + `useSpring` |
+| Parallax depth | Hero (text vs background) | Framer Motion `useTransform` |
+| Canvas particles | Hero background | Vanilla Canvas + rAF |
+| Stagger reveal + blur | Proof cards | Framer Motion `whileInView` |
+| Horizontal rail shift | Featured Work | Framer Motion `useTransform` on `scrollYProgress` |
+| Before/After slider | Featured Work | Native drag + state |
+| Timeline step activation | Process | Framer Motion multi-point `useTransform` |
+| Infinite marquee | Testimonials | Framer Motion loop animation |
+| Gradient shift on scroll | Final CTA bg | Framer Motion `useTransform` |
+| CSS scroll-driven line | Dividers | Native `animation-timeline: view()` |
+| Cursor light spot | Desktop overlay | Framer Motion `useSpring` + rAF |
+| Nav transparency | Navbar | Framer Motion `useTransform` on scroll |
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Colors
+Edit `src/lib/constants.ts` → `COLORS` object:
+- `primary` — Electric cyan (#00F0FF)
+- `warm` — Coral amber (#FF6B35)
+- `cool` — Lavender blue (#7B61FF)
+- `neutral` — Silver mist (#94A3B8)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Content
+All text content is in `src/lib/constants.ts`:
+- `NAV_LINKS`, `PROOF_CARDS`, `PROJECTS`, `PROCESS_STEPS`, `TESTIMONIALS`
 
-## Deploy on Vercel
+### Fonts
+Fonts are configured in `src/app/layout.tsx`:
+- **Display:** Syne (headlines)
+- **Body:** Inter (paragraphs)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Theme
+Dark-mode only. Base background: `#050505`. Modify in `globals.css`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Performance Notes
+
+- `prefers-reduced-motion` disables particles, marquee, and cursor
+- Canvas particles count adjusts to viewport size
+- Cursor uses `requestAnimationFrame` for 60fps
+- Scrollbar hidden utility for horizontal scroll areas
+- Focus-visible indicators for accessibility
+
+## Tech Stack
+
+- **Next.js 16** (App Router)
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Framer Motion** (scroll mapping, animations)
+- **Lenis** (smooth scroll)
+- **GSAP + ScrollTrigger** (installed, ready for hero "wow moments")

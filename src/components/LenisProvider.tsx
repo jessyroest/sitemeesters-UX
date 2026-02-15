@@ -1,0 +1,35 @@
+/* ─── Lenis Smooth Scroll Provider ─── */
+'use client';
+
+import { useEffect, useRef } from 'react';
+import Lenis from 'lenis';
+
+/**
+ * Provides butter-smooth scrolling using Lenis.
+ * Syncs Lenis' internal tick with requestAnimationFrame for max perf.
+ */
+export default function LenisProvider({ children }: { children: React.ReactNode }) {
+    const lenisRef = useRef<Lenis | null>(null);
+
+    useEffect(() => {
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            touchMultiplier: 2,
+            infinite: false,
+        });
+        lenisRef.current = lenis;
+
+        function raf(time: number) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        return () => {
+            lenis.destroy();
+        };
+    }, []);
+
+    return <>{children}</>;
+}
