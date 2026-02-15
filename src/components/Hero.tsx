@@ -49,7 +49,7 @@ export default function Hero() {
             <div
                 className="absolute inset-0 pointer-events-none opacity-[0.22]"
                 style={{
-                    backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px)',
+                    backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)',
                     backgroundSize: '60px 60px',
                     maskImage: 'radial-gradient(circle at 50% 42%, black 20%, transparent 72%)',
                     WebkitMaskImage: 'radial-gradient(circle at 50% 42%, black 20%, transparent 72%)',
@@ -60,7 +60,7 @@ export default function Hero() {
                 <div className="grid items-center gap-12 lg:gap-16 lg:grid-cols-[1.06fr_0.94fr]">
                     <div>
                         <motion.p
-                            className="inline-flex items-center px-3.5 py-1.5 rounded-full text-[0.64rem] font-semibold tracking-[0.16em] uppercase mb-7 border border-black/[0.08] bg-white/75 backdrop-blur"
+                            className="inline-flex items-center px-3.5 py-1.5 rounded-full text-[0.64rem] font-semibold tracking-[0.16em] uppercase mb-7 border border-white/[0.16] bg-[rgba(15,20,36,0.72)] backdrop-blur"
                             style={{ color: 'var(--text-secondary)' }}
                             variants={fadeUp}
                             custom={0}
@@ -104,14 +104,14 @@ export default function Hero() {
                         >
                             <a
                                 href="#contact"
-                                className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-[0.78rem] font-semibold tracking-[0.08em] uppercase text-white bg-[#0A0A0A] hover:bg-[#1F2937] transition-colors duration-300 shadow-[0_10px_22px_rgba(15,23,42,0.18)]"
+                                className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-[0.78rem] font-semibold tracking-[0.08em] uppercase text-white bg-[#4F46E5] hover:bg-[#4338CA] transition-colors duration-300 shadow-[0_10px_26px_rgba(79,70,229,0.35)]"
                             >
                                 Start a project
                                 <span className="transition-transform duration-300 group-hover:translate-x-0.5">-&gt;</span>
                             </a>
                             <a
                                 href="#about"
-                                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-[0.78rem] font-semibold tracking-[0.08em] uppercase border border-black/[0.1] hover:border-black/[0.22] transition-colors duration-300"
+                                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-[0.78rem] font-semibold tracking-[0.08em] uppercase border border-white/[0.2] hover:border-white/[0.35] transition-colors duration-300"
                                 style={{ color: 'var(--text-secondary)' }}
                             >
                                 Learn more
@@ -132,7 +132,7 @@ export default function Hero() {
                             ].map((item) => (
                                 <div
                                     key={item.label}
-                                    className="rounded-2xl border border-black/[0.06] bg-white/78 backdrop-blur px-3.5 py-3 text-center shadow-[0_6px_20px_rgba(0,0,0,0.04)]"
+                                    className="rounded-2xl border border-white/[0.12] bg-[rgba(17,24,44,0.72)] backdrop-blur px-3.5 py-3 text-center shadow-[0_10px_24px_rgba(2,6,23,0.32)]"
                                 >
                                     <p className="text-[0.98rem] md:text-[1.06rem] font-semibold leading-none mb-1" style={{ color: 'var(--foreground)' }}>
                                         {item.value}
@@ -146,31 +146,31 @@ export default function Hero() {
                     </div>
 
                     <motion.div className="hidden lg:block" variants={fadeUp} custom={2} initial="hidden" animate="visible">
-                        <div className="rounded-3xl border border-black/[0.08] bg-white/82 backdrop-blur p-5 shadow-[0_24px_80px_rgba(15,23,42,0.14)]">
-                            <div className="flex items-center gap-2 pb-4 border-b border-black/[0.06]">
-                                <span className="w-2.5 h-2.5 rounded-full bg-black/[0.12]" />
-                                <span className="w-2.5 h-2.5 rounded-full bg-black/[0.12]" />
-                                <span className="w-2.5 h-2.5 rounded-full bg-black/[0.12]" />
-                                <span className="ml-3 h-3.5 w-40 rounded-full bg-black/[0.05]" />
+                        <div className="rounded-3xl border border-white/[0.14] bg-[rgba(14,21,40,0.8)] backdrop-blur p-5 shadow-[0_24px_80px_rgba(2,6,23,0.5)]">
+                            <div className="flex items-center gap-2 pb-4 border-b border-white/[0.1]">
+                                <span className="w-2.5 h-2.5 rounded-full bg-white/[0.18]" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-white/[0.18]" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-white/[0.18]" />
+                                <span className="ml-3 h-3.5 w-40 rounded-full bg-white/[0.08]" />
                             </div>
 
                             <div className="pt-5 space-y-4">
-                                <div className="rounded-2xl border border-black/[0.05] bg-[var(--surface-muted)] p-4">
+                                <div className="rounded-2xl border border-white/[0.1] bg-[var(--surface-muted)] p-4">
                                     <p className="text-[0.62rem] uppercase tracking-[0.16em] mb-2 text-[var(--text-tertiary)]">Positioning</p>
-                                    <p className="text-[1.06rem] font-semibold leading-tight text-[#0A0A0A]">
+                                    <p className="text-[1.06rem] font-semibold leading-tight text-[var(--foreground)]">
                                         Clarity first, visual noise out.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-2 gap-3">
                                     {['UX Structure', 'Visual Identity', 'Fast Build', 'Growth Ready'].map((tag) => (
-                                        <div key={tag} className="rounded-xl border border-black/[0.05] bg-white px-3 py-3">
+                                        <div key={tag} className="rounded-xl border border-white/[0.1] bg-[rgba(255,255,255,0.02)] px-3 py-3">
                                             <p className="text-[0.62rem] uppercase tracking-[0.15em] text-[var(--text-tertiary)]">{tag}</p>
                                         </div>
                                     ))}
                                 </div>
-                                <div className="rounded-2xl border border-[#4F46E5]/20 bg-[#EEF2FF]/60 p-4">
-                                    <p className="text-[0.62rem] uppercase tracking-[0.16em] mb-1.5 text-[#4F46E5]">Result</p>
-                                    <p className="text-[0.9rem] leading-relaxed text-[#4338CA]">
+                                <div className="rounded-2xl border border-[#4F46E5]/40 bg-[rgba(29,33,67,0.72)] p-4">
+                                    <p className="text-[0.62rem] uppercase tracking-[0.16em] mb-1.5 text-[#A5B4FC]">Result</p>
+                                    <p className="text-[0.9rem] leading-relaxed text-[#C7D2FE]">
                                         A premium website that performs, ranks, and helps your brand feel credible.
                                     </p>
                                 </div>
@@ -191,12 +191,12 @@ export default function Hero() {
                 </span>
                 <motion.div
                     className="w-5 h-8 rounded-full border flex items-start justify-center pt-1.5"
-                    style={{ borderColor: 'rgba(0, 0, 0, 0.2)' }}
-                    animate={{ borderColor: ['rgba(0,0,0,0.18)', 'rgba(0,0,0,0.34)', 'rgba(0,0,0,0.18)'] }}
+                    style={{ borderColor: 'rgba(255,255,255,0.28)' }}
+                    animate={{ borderColor: ['rgba(255,255,255,0.24)', 'rgba(255,255,255,0.44)', 'rgba(255,255,255,0.24)'] }}
                     transition={{ repeat: Infinity, duration: 2 }}
                 >
                     <motion.div
-                        className="w-1 h-1.5 rounded-full bg-black/40"
+                        className="w-1 h-1.5 rounded-full bg-white/50"
                         animate={{ y: [0, 10, 0] }}
                         transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
                     />
