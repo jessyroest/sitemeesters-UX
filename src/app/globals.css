@@ -6,7 +6,7 @@
   --foreground: #edf2ff;
   --surface: #0d1222;
   --surface-muted: #151b2f;
-  --accent: #4F46E5;
+  --accent: #22D3EE;
   --accent-light: #262d57;
   --text-secondary: #c0c8dc;
   --text-muted: #8d98b4;
@@ -32,8 +32,9 @@ html {
 
 body {
   background:
-    radial-gradient(70rem 34rem at 8% -8%, rgba(79, 70, 229, 0.2) 0%, transparent 62%),
-    radial-gradient(64rem 28rem at 92% 14%, rgba(37, 99, 235, 0.15) 0%, transparent 64%),
+    radial-gradient(72rem 40rem at 40% 8%, rgba(59, 130, 246, 0.2) 0%, transparent 62%),
+    radial-gradient(64rem 32rem at 88% 58%, rgba(249, 115, 22, 0.12) 0%, transparent 70%),
+    radial-gradient(54rem 28rem at 10% 84%, rgba(34, 211, 238, 0.1) 0%, transparent 72%),
     var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;

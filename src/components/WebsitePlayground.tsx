@@ -24,10 +24,10 @@ interface PreviewConfig {
 }
 
 const STYLES: Record<StyleKey, { label: string; config: Partial<PreviewConfig> }> = {
-    minimal: { label: 'Minimal', config: { accent: '#0A0A0A', borderRadius: '8px', fontWeight: 400 } },
-    bold: { label: 'Bold', config: { accent: '#4F46E5', borderRadius: '16px', fontWeight: 700 } },
-    luxury: { label: 'Luxury', config: { accent: '#92734E', borderRadius: '4px', fontWeight: 300 } },
-    tech: { label: 'Tech', config: { accent: '#2563EB', borderRadius: '12px', fontWeight: 500 } },
+    minimal: { label: 'Minimal', config: { accent: '#22D3EE', borderRadius: '8px', fontWeight: 400 } },
+    bold: { label: 'Bold', config: { accent: '#6366F1', borderRadius: '16px', fontWeight: 700 } },
+    luxury: { label: 'Luxury', config: { accent: '#F59E0B', borderRadius: '4px', fontWeight: 300 } },
+    tech: { label: 'Tech', config: { accent: '#3B82F6', borderRadius: '12px', fontWeight: 500 } },
 };
 
 const LAYOUTS: Record<LayoutKey, { label: string; headline: string; navLinks: string[]; cta: string }> = {

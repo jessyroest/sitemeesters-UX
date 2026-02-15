@@ -80,7 +80,13 @@ export default function Hero() {
                         >
                             Websites that feel premium
                             <br />
-                            and <span className="text-[var(--accent)]">convert fast</span>.
+                            and <span
+                                style={{
+                                    backgroundImage: 'linear-gradient(90deg, #22D3EE 0%, #6366F1 48%, #F97316 100%)',
+                                    WebkitBackgroundClip: 'text',
+                                    color: 'transparent',
+                                }}
+                            >convert fast</span>.
                         </motion.h1>
 
                         <motion.p
