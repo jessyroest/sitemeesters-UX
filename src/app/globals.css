@@ -24,6 +24,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Offset hash-link jumps for fixed navbar */
+  scroll-padding-top: 6.5rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
